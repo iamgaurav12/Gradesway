@@ -1,18 +1,11 @@
-// module.exports = {
-//     content: [
-//       "./src/**/*.{js,ts,jsx,tsx}",
-//       "./node_modules/@shadcn/ui/**/*.{js,ts,jsx,tsx}",
-//     ],
-//     theme: {
-//       extend: {},
-//     },
-//     plugins: [],
-//   };
-  /** @type {import('tailwindcss').Config} */
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
     darkMode: ["class"],
-    content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
-    theme: {
+    content: [
+	  "./index.html",
+	  "./src/**/*.{js,ts,jsx,tsx}",
+	],
+	theme: {
     	extend: {
     		borderRadius: {
     			lg: 'var(--radius)',
@@ -63,6 +56,6 @@ module.exports = {
     		}
     	}
     },
-    plugins: [require("tailwindcss-animate")],
-  }
+	plugins: [require("tailwindcss-animate")],
+  };
   

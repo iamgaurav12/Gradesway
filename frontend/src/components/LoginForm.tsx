@@ -1,60 +1,50 @@
-import { useState } from "react";
-import axios from "axios";
-import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+import React, { useState } from 'react';
+import axios from 'axios';
 
-  const handleLogin = async () => {
-    setLoading(true);
+const LoginForm: React.FC = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-      });
+      const response = await axios.post('http://localhost:5000/login', { username, password });
       if (response.status === 200) {
-        window.location.href = "/dashboard";
+        window.location.href = '/dashboard';
       }
     } catch (error) {
-      console.error("Login error:", error);
-      alert("Invalid credentials");
-    } finally {
-      setLoading(false);
+      alert('Invalid credentials');
+      console.log(error);
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <Card className="w-96 shadow-lg">
-        <CardHeader className="p-4">
-          <h2 className="text-lg font-bold">Login</h2>
-        </CardHeader>
-        <CardContent className="p-4">
-          <Input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="mb-4"
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="mb-4"
-          />
-        </CardContent>
-        <CardFooter className="p-4">
-          <Button onClick={handleLogin} className="w-full" disabled={loading}>
-            {loading ? "Logging in..." : "Login"}
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
+    <form onSubmit={handleSubmit} className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Login</h2>
+      <div className="mb-4">
+        <label className="block mb-2 text-gray-700 dark:text-gray-300">Username</label>
+        <input
+          type="text"
+          placeholder="Enter your username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2 text-gray-700 dark:text-gray-300">Password</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <button type="submit" className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Login
+      </button>
+    </form>
   );
 };
 
