@@ -1,15 +1,93 @@
-# React + TypeScript + Vite
+# Gradesway Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application built with TypeScript and Vite. It provides a platform for managing quizzes, including creating, editing, and deleting quizzes. The application also supports dark mode.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building for Production](#building-for-production)
+- [Project Structure](#project-structure)
+- [API Endpoints](#api-endpoints)
+- [Expanding the ESLint Configuration](#expanding-the-eslint-configuration)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+```sh
+git clone https://github.com/iamgaurav12/Gradesway
+cd gradesway/frontend
+```
+
+2. Install dependencies:
+
+```sh
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+
+To start the development server, run:
+
+```sh
+npm run dev
+# or
+yarn dev
+```
+
+This will start the Vite development server and you can access the application at `http://localhost:5173`.
+
+### Building for Production
+
+To build the application for production, run:
+
+```sh
+npm run build
+# or
+yarn build
+```
+
+The production-ready files will be generated in the `dist` directory.
+
+## Project Structure
+
+- `src/`: Contains the source code of the application
+  - `components/`: Reusable React components
+  - `context/`: Context providers for global state management
+  - `pages/`: Page components for different routes
+  - `services/`: API service functions
+- `public/`: Static assets
+- `dist/`: Production build output
+
+## API Endpoints
+
+The application interacts with a backend server running at `http://localhost:5000`. The following API endpoints are used:
+
+- `POST /login`: User login
+- `GET /quizzes`: Fetch all quizzes
+- `GET /quizzes/:id`: Fetch a quiz by ID
+- `POST /quizzes`: Create a new quiz
+- `PUT /quizzes/:id`: Update a quiz by ID
+- `DELETE /quizzes/:id`: Delete a quiz by ID
+
+## Expanding the ESLint Configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
 - Configure the top-level `parserOptions` property like this:
 
@@ -25,7 +103,7 @@ export default tseslint.config({
 })
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Replace `tseslint.configs.recommended` with `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
 - Optionally add `...tseslint.configs.stylisticTypeChecked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
@@ -48,3 +126,6 @@ export default tseslint.config({
   },
 })
 ```
+-----
+## End
+
