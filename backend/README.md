@@ -9,6 +9,7 @@ Gaurav Prakash
 ## Requirements
 - Node.js
 - MySQL
+- Change db.ts with your requirements also(Important Step)
 
 ## Installation
 1. Clone the repository:
