@@ -9,6 +9,7 @@ Gaurav Prakash
 ## Requirements
 - Node.js
 - MySQL
+- Change db.ts with your requirements also(Important Step)
 
 ## Installation
 1. Clone the repository:
@@ -46,10 +47,6 @@ Gaurav Prakash
 ## Environment Variables
 Create a `.env` file in the root directory and add the following variables:
 ```
-DB_NAME=quizdb
-DB_USER=root
-DB_PASS=12345
-DB_HOST=localhost
 PORT=5000
 ```
 
