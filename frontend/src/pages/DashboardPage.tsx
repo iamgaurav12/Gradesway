@@ -30,9 +30,9 @@ const DashboardPage: React.FC = () => {
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Your Quizzes</h2>
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 dark:text-gray-100">Your Quizzes</h2>
       <QuizList quizzes={quizzes} onDelete={handleDelete} />
-      <Link to="/create" className="mt-6 inline-block p-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-600">
+      <Link to="/create" className="mt-6 inline-block p-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transform transition-transform hover:scale-105">
         Create New Quiz
       </Link>
     </div>

@@ -17,8 +17,8 @@ const QuizList: React.FC<QuizListProps> = ({ quizzes, onDelete }) => {
     <ul className="space-y-6">
       {quizzes.map((quiz) => (
         <li key={quiz.id} className="mb-6">
-          <div className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">{quiz.title}</h3>
+          <div className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg hover:shadow-lg transition-shadow duration-300 transform transition-transform hover:scale-105">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{quiz.title}</h3>
             <p className="text-gray-600 dark:text-gray-300">{quiz.description}</p>
             <div className="mt-4 flex space-x-4">
               <Link

@@ -42,11 +42,11 @@ const CreateEditQuizPage: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg max-w-lg mx-auto mt-10">
+    <form onSubmit={handleSubmit} className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg max-w-lg mx-auto mt-10 transform transition-transform hover:scale-105">
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">{id ? 'Edit Quiz' : 'Create Quiz'}</h2>
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 dark:text-gray-100">{id ? 'Edit Quiz' : 'Create Quiz'}</h2>
       <div className="mb-4">
         <label className="block mb-2 text-gray-700 dark:text-gray-300">Title</label>
         <input

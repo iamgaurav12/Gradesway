@@ -19,8 +19,8 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Login</h2>
+    <form onSubmit={handleSubmit} className="p-6 bg-white dark:bg-gray-800 shadow rounded-lg transform transition-transform hover:scale-105">
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 dark:text-gray-100">Login</h2>
       <div className="mb-4">
         <label className="block mb-2 text-gray-700 dark:text-gray-300">Username</label>
         <input

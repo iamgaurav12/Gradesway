@@ -8,8 +8,8 @@ const LoginPage: React.FC = () => {
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">Welcome to Gradesway</h1>
+      <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md transform transition-transform hover:scale-105">
+        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-800 dark:text-gray-100">Welcome to Gradesway</h1>
         <LoginForm />
       </div>
     </div>
